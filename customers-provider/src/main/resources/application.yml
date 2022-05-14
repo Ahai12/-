@@ -1,0 +1,22 @@
+server:
+  port: 8003
+
+eureka:
+  client:
+    service-url:
+      defaultzone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: customers-provider
+  datasource:
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/springdemo_01?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+      username: root
+      password: 123456
+
+
+mybatis:
+  mapper-locations: classpath:mappers/*.xml
+  type-aliases-package: com.ljh.commons.pojo

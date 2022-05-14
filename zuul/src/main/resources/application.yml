@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: zuul
+
+eureka:
+  client:
+    service-url:
+      defaultzon: http://localhost:8761/eureka
+
+      #公开所有端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+zuul:
+  routes:
+    goods-provider: /goods/**
+    goods-ui: /goods/**
+    customers-provider: /customers/**
+    customers-ui: /customers/**
